@@ -1,0 +1,46 @@
+\documentclass{FYS330_report}
+% A simple report style used to finalize project plans and reports for
+% FYS.330 Project Work. Using this template ensures that each group produces
+% documents that can be easily compared against each other. Please keep the
+% structure and styling intact so that future students can benefit from
+% uniform formatting.
+
+%% Customize search paths, so that LaTeX finds the files also from the
+%% below listed sub-folders:
+\makeatletter
+\def\input@path{{Preamble/}{Chapters/}{Bibliographies/}}
+\makeatother
+
+% Customized search paths for graphics:
+\graphicspath{{Figures/}{Figures/Logos/}}
+
+% Bibliography database (biblatex resource) — keep this path in sync with
+% wherever you keep your .bib file. \printbibliography (in main.tex, at the
+% end of the document) will not show anything without this line.
+\addbibresource{Bibliographies/references.bib}
+
+%%%% TITLE PAGE INFORMATION %%%%
+\title{Project Title Goes Here}{Project name}%
+\subtitle{FYS.330 Project Work\\ Project plan}%
+
+\author{First~Author, Second~Author, Third~Author} % People involved. Use '~' between first and last name of each author so line breaks only happen between different authors.
+
+\finishdate{2026}{01}{01} % (YYYY-MM-DD)
+
+%%%% DOCUMENT BEGINS %%%%
+\begin{document}
+
+\maketitle          % Makes the first page
+
+\tableofcontents    % TOC
+
+%%%%% CHAPTERS %%%%%
+\input{Chapters/ChapI_Background}
+\input{Chapters/ChapII_Implementation}
+\input{Chapters/ChapIII_Team}
+\input{Chapters/ChapIV_Budget}
+
+\printbibliography
+
+\end{document}
+%%%% DOCUMENT ENDS %%%%

@@ -1,0 +1,181 @@
+\chapter{Implementation}
+
+\section{Work plan and schedule}
+
+\instructionbox{Describe, in a short paragraph, how the project is
+organised in time: which phases exist, which ones depend on each other,
+how the team is split into sub-groups (if any), and how progress will be
+tracked (e.g.\ weekly meetings, a project manager). Then present your
+schedule using a \emph{Gantt chart} (Table~\ref{tab:gantt}) that visualises the data
+week by week. Keep the Gantt chart in this exact format (same task IDs,
+same column order) matters beyond good looks: because the data lives in a
+plain, predictably-structured LaTeX table rather than an image, it can
+later be parsed automatically to regenerate task lists (e.g.\ for an issue
+tracker or a status-meeting agenda) instead of retyping them by hand.}
+
+The project is divided into three phases (Planning, Implementation and reporting) and team-specific tasks, with a visual overview of the schedule given in Table~\ref{tab:gantt}.
+
+% MJH: this task list is redundant, since e.g. Claude can certainly extract the task and resposible person information alraedy from the Gantt chart.
+%%\begin{table}[h!]
+%%\centering
+%%\caption{Task list. This table is the master record of the schedule:
+%%each task has a unique ID, an owner, a start/end week, and (where
+%%applicable) a concrete deliverable. Add or remove rows as needed, but
+%%keep the columns in this order and keep IDs unique and sequential --
+%%this is what lets the schedule be re-used programmatically later on.}
+%%\label{tab:tasklist}
+%%\small
+%%\setlength{\tabcolsep}{3pt}
+%%\setlength{\tlremaining}{\dimexpr(\textwidth-0.6cm-2.4cm-1.3cm-1.3cm-10\tabcolsep)\relax}
+%%\begin{tabular}{@{}p{0.6cm} p{0.6\tlremaining} p{2.4cm}
+%%                    >{\centering\arraybackslash}p{1.3cm}
+%%                    >{\centering\arraybackslash}p{1.3cm} p{0.4\tlremaining}@{}}
+%%\toprule
+%%\textbf{ID} & \textbf{Task} & \shortstack[l]{\textbf{Responsible}\\\textbf{person}} & \shortstack{\textbf{Start}\\\textbf{(week)}} & \shortstack{\textbf{End}\\\textbf{(week)}} & \shortstack[l]{\textbf{Deliverable/}\\\textbf{Milestone}} \\
+%%\midrule
+%%T1 & Kickoff and background research      & Whole team & 1  & 2  & Shared reading list \\
+%%T2 & Detailed literature review           & Author A   & 2  & 5  & Background chapter draft \\
+%%D1 & Return of preliminary project plan   & Whole team & 5  & 5  & DL Sun 22.11.\ 23:59 \\
+%%T3 & Method / experimental design          & Author B   & 5  & 7  & Method description \\
+%%D2 & Return of final project plan         & Whole team & 7  & 7  & DL Fri 4.12.\ 23:59 \\
+%%T4 & Data collection / simulations         & Whole team & 8  & 11 & Raw data set \\
+%%T5 & Interim review meeting               & Whole team & 10 & 10 & Meeting notes (milestone) \\
+%%T6 & Data analysis                        & Author C   & 12 & 13 & Analysis notebook / results \\
+%%T7 & Draft report writing                 & Whole team & 14 & 16 & Full draft report \\
+%%D3 & Return of implementation report      & Whole team & 16 & 16 & DL Sun 21.3.\ 23:59 \\
+%%T8 & Prepare presentation                 & Whole team & 17 & 19 & Full draft report \\
+%%T9 & Final report and presentation        & Whole team & 19 & 21 & Final report, slides \\
+%%D4 & Return of project presentation       & Whole team & 21 & 21 & DL Sun 25.4.\ 23:59 \\
+%%D5 & Return of personal course reflection & Individual & -- & -- & DL Sun 9.5.\ 23:59 (exam period) \\
+%%\bottomrule
+%%\end{tabular}
+%%\end{table}
+
+\instructionbox{The Gantt chart below covers the whole
+21-week course timeline (see Section~\ref{sec:scheduling}), with each
+column carrying two stacked labels -- the sequential \emph{Project week}
+on top and the real ISO \emph{Calendar week} below -- so the chart is
+both clean to scan and traceable back to actual dates. Four narrow grey
+columns mark the non-working weeks, all deliberately excluded from the
+Project week count: the Christmas break (calendar weeks 50--52/2026 and
+week 1/2027) between Planning and Implementation, the spring exam week
+(calendar week 8/2027) between Implementation and Reporting, and a
+two-week exam period (calendar weeks 17--18/2027) after Reporting, at the
+very end of the chart. Each shaded task cell shows its own project-week
+number in \texttt{\textbackslash tiny} type (\texttt{\textbackslash
+gwk\{n\}} for a normal active week, \texttt{\textbackslash gwkm\{n\}} for
+a milestone week); the responsible person/sub-team is named after each
+task. Deliverables are also shown with \texttt{\textbackslash gdl\{Dn\}} (an orange marker, to stand
+apart from task/milestone cells). Note D5 sits inside the trailing
+exam-break column since its deadline falls in that week even though no
+project work is scheduled then. Vertical rules mark the three project
+phases.}
+
+\begin{table}[h!]
+\centering
+\caption{Example Gantt chart built across the full 21-week course timeline, one row per task/deliverable (with its responsible person initials/team), interleaved in chronological order, one column per project week, each labelled with both its project week and its real calendar week. The four narrow grey columns mark, in order, the Christmas break, the spring exam week, and the two week end-of-term exam period. Vertical rules mark the boundaries between the Planning, Implementation and Reporting phases. Mark team leaders into the phase labels (e.g. Planning (Mikko+Panu), so that an assigned main responsible person can be always found. If space becomes tight, you may use person's initials, e.g.~MJH, and clarify the used notation in the table caption. }
+\label{tab:gantt}
+\tiny%\scriptsize
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.15}
+%\setlength{\wkcolwidth}{\dimexpr(\textwidth-0.5cm-2.6cm-0.72cm-52\tabcolsep)/21\relax}
+\setlength{\wkcolwidth}{\dimexpr(\textwidth-0.5cm-4cm-0.72cm-52\tabcolsep)/21\relax}
+\begin{tabular}{@{}p{0.35cm} p{3.6cm}
+   *{7}{>{\centering\arraybackslash}p{\wkcolwidth}}
+   |>{\columncolor{gray!35}}p{0.1cm}| %0.18
+   *{6}{>{\centering\arraybackslash}p{\wkcolwidth}}
+   |>{\columncolor{gray!35}}p{0.1cm}|
+   *{8}{>{\centering\arraybackslash}p{\wkcolwidth}}
+   |>{\columncolor{gray!35}}p{0.01cm}>{\columncolor{gray!35}}p{0.25cm}|@{}}
+\toprule
+\textbf{ID} & \textbf{Task (responsible)}
+   & \multicolumn{7}{c}{\textbf{Planning (Team lead A)}} &
+   & \multicolumn{6}{c}{\textbf{Implementation (MJH)}} &
+   & \multicolumn{8}{c}{\textbf{Reporting (Team lead C+D)}} & & \\ %\multicolumn{8}{c}{\textbf{Reporting}} & & \\
+& \textit{Project wk} & {\tiny 1} & {\tiny 2} & {\tiny 3} & {\tiny 4} & {\tiny 5} & {\tiny 6} & {\tiny 7} &  & {\tiny 8} & {\tiny 9} & {\tiny 10} & {\tiny 11} & {\tiny 12} & {\tiny 13} &  & {\tiny 14} & {\tiny 15} & {\tiny 16} & {\tiny 17} & {\tiny 18} & {\tiny 19} & {\tiny 20} & {\tiny 21} &  &  \\
+& \textit{Calendar wk} & {\tiny 43} & {\tiny 44} & {\tiny 45} & {\tiny 46} & {\tiny 47} & {\tiny 48} & {\tiny 49} &  & {\tiny 2} & {\tiny 3} & {\tiny 4} & {\tiny 5} & {\tiny 6} & {\tiny 7} &  & {\tiny 9} & {\tiny 10} & {\tiny 11} & {\tiny 12} & {\tiny 13} & {\tiny 14} & {\tiny 15} & {\tiny 16} &  &  \\
+\midrule
+T1 & Kickoff \& background research \textit{(Whole team)}
+   & \gwk{1} & \gwk{2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+T2 & Literature review \textit{(Author A)}
+   &  & \gwk{2} & \gwk{3} & \gwk{4} & \gwk{5} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+D1 & Prelim.\ plan due \textit{(Whole team)}
+   &  &  &  &  & \gdl{D1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+T3 & Method/experimental design \textit{(Author B)}
+   &  &  &  &  & \gwk{5} & \gwk{6} & \gwk{7} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+D2 & Final plan due \textit{(Whole team)}
+   &  &  &  &  &  &  & \gdl{D2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+T4 & Data collection / simulations \textit{(Whole team)}
+   &  &  &  &  &  &  &  &  & \gwk{8} & \gwk{9} & \gwk{10} & \gwk{11} &  &  &  &  &  &  &  &  &  &  &  &  & \\
+T5 & Interim review \textit{(milestone, whole team)}
+   &  &  &  &  &  &  &  &  &  &  & \gwkm{10} &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+T6 & Data analysis \textit{(Author C)}
+   &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{12} & \gwk{13} &  &  &  &  &  &  &  &  &  &  & \\
+T7 & Draft report writing \textit{(Whole team)}
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  & & \gwk{14} & \gwk{15} & \gwk{16} &  &  &  &  &  &  &   \\
+D3 & Impl.\ report due \textit{(Whole team)}
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & & \gdl{D3} &  &  &  &  &  &  & \\
+T8 & Prepare presentation \textit{(Whole team)}
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{17} & \gwk{18} & \gwk{19} &  &  &  &  & \\
+T9 & Final report \& presentation \textit{(milestone, whole team)}
+   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwkm{19} & \gwkm{20} & \gwkm{21} &  &  \\
+D4 & Presentation due \textit{(Whole team)}
+   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D4} &  &  \\
+D5 & Reflection due \textit{(Individual)}
+   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D5} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Turning calendar weeks into a clean chart}
+\label{sec:scheduling}
+
+\begin{enumerate}
+    \item \textbf{Number project weeks sequentially, not by calendar
+    week.} Keep a small lookup table (Table~\ref{tab:weekkey}) that maps
+    each sequential \emph{Project week} to its real ISO calendar week and
+    dates, and use only the sequential number in the Gantt chart itself.
+    \item \textbf{Exclude non-working weeks from the numbering}, marking
+    them explicitly in the lookup table (e.g.\ ``Christmas break'')
+    instead of giving them a numbered column in the chart -- though, as
+    Table~\ref{tab:gantt} shows, a narrow shaded column can still mark
+    *where* the break falls without breaking the numbering.
+    \item \textbf{If the remaining working-week count is still large,
+    aggregate.} Either (a) let each Gantt column represent two calendar
+    weeks (halving the column count), or (b) split the chart into two
+    linked tables at the natural term boundary (e.g.\ one for the autumn
+    instalment, one for the spring instalment), each formatted exactly
+    like Table~\ref{tab:gantt} and using the same task IDs.
+\end{enumerate}
+
+\section{Data and material, methods, and working environment}
+
+\instructionbox{Describe what data or material you will work with, how you
+will obtain it (measurements, simulations, existing data sets, literature
+values), which methods/software/equipment you will use, and where the work
+will physically or computationally take place (which lab, which cluster,
+which facility). Bullet-point lists of the specific cases/conditions you
+will study or measure are encouraged, as in the example below.}
+
+Describe your data sources, methods and working environment here, for
+example:
+\begin{itemize}
+    \item \emph{[Condition / case 1 to be studied or measured]}
+    \item \emph{[Condition / case 2 to be studied or measured]}
+    \item \emph{[Condition / case 3 to be studied or measured]}
+\end{itemize}
+
+\section{Risk assessment}
+
+\instructionbox{Identify the main risks to the project succeeding on
+schedule: e.g.\ unfamiliar topic/methods, equipment or collaborator
+availability, team dynamics, or external dependencies. For each risk,
+briefly state how you plan to reduce or manage it. This does not need to
+be exhaustive -- focus on the two or three risks most likely to actually
+affect your timeline.}
+
+\begin{itemize}
+    \item \emph{[Risk 1]} -- \emph{[mitigation plan]}
+    \item \emph{[Risk 2]} -- \emph{[mitigation plan]}
+    \item \emph{[Risk 3]} -- \emph{[mitigation plan]}
+\end{itemize}
