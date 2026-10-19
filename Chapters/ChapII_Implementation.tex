@@ -79,52 +79,52 @@ phases.}
 \setlength{\tabcolsep}{1pt}
 \renewcommand{\arraystretch}{1.15}
 %\setlength{\wkcolwidth}{\dimexpr(\textwidth-0.5cm-2.6cm-0.72cm-52\tabcolsep)/21\relax}
+% BEGIN GANTT (auto-generated from the Gantt workbook -- edit the .xlsx, not this block)
 \setlength{\wkcolwidth}{\dimexpr(\textwidth-0.5cm-4cm-0.72cm-52\tabcolsep)/21\relax}
 \begin{tabular}{@{}p{0.35cm} p{3.6cm}
    *{7}{>{\centering\arraybackslash}p{\wkcolwidth}}
-   |>{\columncolor{gray!35}}p{0.1cm}| %0.18
+   |>{\columncolor{gray!35}}p{0.1cm}|
    *{6}{>{\centering\arraybackslash}p{\wkcolwidth}}
    |>{\columncolor{gray!35}}p{0.1cm}|
    *{8}{>{\centering\arraybackslash}p{\wkcolwidth}}
    |>{\columncolor{gray!35}}p{0.01cm}>{\columncolor{gray!35}}p{0.25cm}|@{}}
 \toprule
 \textbf{ID} & \textbf{Task (responsible)}
-   & \multicolumn{7}{c}{\textbf{Planning (Team lead A)}} &
-   & \multicolumn{6}{c}{\textbf{Implementation (MJH)}} &
-   & \multicolumn{8}{c}{\textbf{Reporting (Team lead C+D)}} & & \\ %\multicolumn{8}{c}{\textbf{Reporting}} & & \\
+   & \multicolumn{7}{c}{\textbf{Planning (Team lead A)}} &  & \multicolumn{6}{c}{\textbf{Implementation (MJH)}} &  & \multicolumn{8}{c}{\textbf{Reporting (Team lead C+D)}} &  &  \\
 & \textit{Project wk} & {\tiny 1} & {\tiny 2} & {\tiny 3} & {\tiny 4} & {\tiny 5} & {\tiny 6} & {\tiny 7} &  & {\tiny 8} & {\tiny 9} & {\tiny 10} & {\tiny 11} & {\tiny 12} & {\tiny 13} &  & {\tiny 14} & {\tiny 15} & {\tiny 16} & {\tiny 17} & {\tiny 18} & {\tiny 19} & {\tiny 20} & {\tiny 21} &  &  \\
 & \textit{Calendar wk} & {\tiny 43} & {\tiny 44} & {\tiny 45} & {\tiny 46} & {\tiny 47} & {\tiny 48} & {\tiny 49} &  & {\tiny 2} & {\tiny 3} & {\tiny 4} & {\tiny 5} & {\tiny 6} & {\tiny 7} &  & {\tiny 9} & {\tiny 10} & {\tiny 11} & {\tiny 12} & {\tiny 13} & {\tiny 14} & {\tiny 15} & {\tiny 16} &  &  \\
 \midrule
 T1 & Kickoff \& background research \textit{(Whole team)}
-   & \gwk{1} & \gwk{2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   & \gwk{1} & \gwk{2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 T2 & Literature review \textit{(Author A)}
-   &  & \gwk{2} & \gwk{3} & \gwk{4} & \gwk{5} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
-D1 & Prelim.\ plan due \textit{(Whole team)}
-   &  &  &  &  & \gdl{D1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   &  & \gwk{2} & \gwk{3} & \gwk{4} & \gwk{5} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+D1 & Prelim. plan due \textit{(Whole team)}
+   &  &  &  &  & \gdl{D1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 T3 & Method/experimental design \textit{(Author B)}
-   &  &  &  &  & \gwk{5} & \gwk{6} & \gwk{7} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   &  &  &  &  & \gwk{5} & \gwk{6} & \gwk{7} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 D2 & Final plan due \textit{(Whole team)}
-   &  &  &  &  &  &  & \gdl{D2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   &  &  &  &  &  &  & \gdl{D2} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 T4 & Data collection / simulations \textit{(Whole team)}
-   &  &  &  &  &  &  &  &  & \gwk{8} & \gwk{9} & \gwk{10} & \gwk{11} &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   &  &  &  &  &  &  &  &  & \gwk{8} & \gwk{9} & \gwk{10} & \gwk{11} &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 T5 & Interim review \textit{(milestone, whole team)}
-   &  &  &  &  &  &  &  &  &  &  & \gwkm{10} &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+   &  &  &  &  &  &  &  &  &  &  & \gwkm{10} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 T6 & Data analysis \textit{(Author C)}
-   &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{12} & \gwk{13} &  &  &  &  &  &  &  &  &  &  & \\
+   &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{12} & \gwk{13} &  &  &  &  &  &  &  &  &  &  &  \\
 T7 & Draft report writing \textit{(Whole team)}
-   &  &  &  &  &  &  &  &  &  &  &  &  &  &  & & \gwk{14} & \gwk{15} & \gwk{16} &  &  &  &  &  &  &   \\
-D3 & Impl.\ report due \textit{(Whole team)}
-   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & & \gdl{D3} &  &  &  &  &  &  & \\
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{14} & \gwk{15} & \gwk{16} &  &  &  &  &  &  &  \\
+D3 & Impl. report due \textit{(Whole team)}
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D3} &  &  &  &  &  &  &  \\
 T8 & Prepare presentation \textit{(Whole team)}
-   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{17} & \gwk{18} & \gwk{19} &  &  &  &  & \\
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwk{17} & \gwk{18} & \gwk{19} &  &  &  &  \\
 T9 & Final report \& presentation \textit{(milestone, whole team)}
-   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwkm{19} & \gwkm{20} & \gwkm{21} &  &  \\
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gwkm{19} & \gwkm{20} & \gwkm{21} &  &  \\
 D4 & Presentation due \textit{(Whole team)}
-   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D4} &  &  \\
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D4} &  &  \\
 D5 & Reflection due \textit{(Individual)}
-   & &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D5} \\
+   &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \gdl{D5} \\
 \bottomrule
 \end{tabular}
+% END GANTT
 \end{table}
 
 \subsection{Turning calendar weeks into a clean chart}
